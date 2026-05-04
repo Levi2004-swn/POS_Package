@@ -6,13 +6,12 @@
 <title>Sales Point — Pricing Plans</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;600&display=swap" rel="stylesheet"/>
 
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  /* Logo-matched palette */
   --blue-deep:    #1D4ED8;
   --blue-mid:     #2563EB;
   --blue-bright:  #3B82F6;
@@ -31,7 +30,6 @@
   --surface:      #FFFFFF;
   --border:       #DBEAFE;
   --border-2:     #BFDBFE;
-
   --shadow-sm:    0 2px 12px rgba(37,99,235,0.08);
   --shadow-md:    0 8px 40px rgba(37,99,235,0.13);
   --shadow-lg:    0 20px 60px rgba(37,99,235,0.20);
@@ -52,7 +50,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Mesh background */
 body::before {
   content: '';
   position: fixed;
@@ -65,12 +62,11 @@ body::before {
   z-index: 0;
 }
 
-/* Grid texture */
 body::after {
   content: '';
   position: fixed;
   inset: 0;
-  background-image: 
+  background-image:
     linear-gradient(rgba(37,99,235,0.03) 1px, transparent 1px),
     linear-gradient(90deg, rgba(37,99,235,0.03) 1px, transparent 1px);
   background-size: 40px 40px;
@@ -96,16 +92,15 @@ nav {
   animation: fadeUp 0.6s ease forwards;
 }
 
+/* ── NEW LARGE LOGO ── */
 .nav-logo {
   display: flex;
   align-items: center;
-  gap: 0;
 }
 
-/* Embedded SVG logo, scaled down */
-.nav-logo svg.logo-svg {
+.logo-svg-large {
   width: auto;
-  height: 48px;
+  height: 90px; /* Big, clear, real-life sized */
 }
 
 .nav-contact {
@@ -273,7 +268,6 @@ nav {
   box-shadow: var(--shadow-md);
 }
 
-/* Corner accent */
 .plan-card::before {
   content: '';
   position: absolute;
@@ -311,7 +305,6 @@ nav {
 .plan-card.featured .check-icon.yes { background: rgba(245,158,11,0.22); }
 .plan-card.featured .check-icon.no  { background: rgba(255,255,255,0.05); }
 
-/* Popular badge */
 .popular-badge {
   position: absolute;
   top: -14px;
@@ -598,7 +591,10 @@ footer {
   justify-content: center;
   margin-bottom: 10px;
 }
-.footer-logo svg { height: 36px; width: auto; }
+.footer-logo-svg {
+  height: 64px;
+  width: auto;
+}
 
 .footer-note {
   font-size: 12px;
@@ -625,10 +621,12 @@ footer {
   .plan-card.featured:hover { transform: translateY(-6px); }
   .trust-grid { grid-template-columns: 1fr 1fr; }
   .faq-grid { grid-template-columns: 1fr; }
+  .logo-svg-large { height: 70px; }
 }
 @media (max-width: 560px) {
   .page { padding: 0 18px 60px; }
   .trust-grid { gap: 10px; }
+  .logo-svg-large { height: 56px; }
 }
 </style>
 </head>
@@ -639,28 +637,70 @@ footer {
   <!-- NAV -->
   <nav>
     <div class="nav-logo">
-      <!-- Embedded SalesPoint logo, colours preserved from original SVG -->
-      <svg class="logo-svg" viewBox="0 0 680 280" xmlns="http://www.w3.org/2000/svg">
-        <style>
-          .brand-name { font-family: Arial, sans-serif; font-size: 42px; font-weight: 500; fill: #111827; letter-spacing: -1px; }
-          .brand-tag  { font-family: Arial, sans-serif; font-size: 14px; font-weight: 400; fill: #6B7280; letter-spacing: 2px; }
-          .brand-bold { font-weight: 500; fill: #2563EB; }
-          .bar1 { fill: #BFDBFE; }
-          .bar2 { fill: #3B82F6; }
-          .bar3 { fill: #1D4ED8; }
-          .arc-line { stroke: #2563EB; stroke-width: 2.5; fill: none; stroke-linecap: round; }
-        </style>
-        <g transform="translate(155, 80)">
-          <rect class="bar1" x="0" y="72" width="22" height="38" rx="4"/>
-          <rect class="bar2" x="30" y="44" width="22" height="66" rx="4"/>
-          <rect class="bar3" x="60" y="14" width="22" height="96" rx="4"/>
-          <path class="arc-line" d="M 11 68 Q 41 20 71 10"/>
-          <circle cx="71" cy="0" r="11" fill="#F59E0B"/>
-          <circle cx="71" cy="0" r="5" fill="white"/>
-          <line x1="71" y1="10" x2="71" y2="18" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/>
+      <!-- NEW LARGE REALISTIC LOGO -->
+      <svg class="logo-svg-large" viewBox="0 0 560 110" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="bar1g" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#93C5FD"/>
+            <stop offset="100%" stop-color="#BFDBFE"/>
+          </linearGradient>
+          <linearGradient id="bar2g" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#3B82F6"/>
+            <stop offset="100%" stop-color="#60A5FA"/>
+          </linearGradient>
+          <linearGradient id="bar3g" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#1D4ED8"/>
+            <stop offset="100%" stop-color="#2563EB"/>
+          </linearGradient>
+          <radialGradient id="dotg" cx="38%" cy="35%" r="65%">
+            <stop offset="0%" stop-color="#FDE68A"/>
+            <stop offset="55%" stop-color="#F59E0B"/>
+            <stop offset="100%" stop-color="#D97706"/>
+          </radialGradient>
+          <filter id="glowdot" x="-100%" y="-100%" width="300%" height="300%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+
+        <!-- Icon group -->
+        <g transform="translate(8, 8)">
+          <!-- Bar 1 (shortest) -->
+          <rect x="0" y="46" width="20" height="44" rx="5" fill="url(#bar1g)"/>
+          <!-- Bar 2 (medium) -->
+          <rect x="27" y="28" width="20" height="62" rx="5" fill="url(#bar2g)"/>
+          <!-- Bar 3 (tallest) -->
+          <rect x="54" y="8" width="20" height="82" rx="5" fill="url(#bar3g)"/>
+          <!-- Trend arc -->
+          <path d="M 10 42 Q 37 14 64 4" fill="none" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round" opacity="0.65"/>
+          <!-- Amber dot glow -->
+          <circle cx="64" cy="-4" r="12" fill="rgba(245,158,11,0.18)" filter="url(#glowdot)"/>
+          <!-- Amber dot -->
+          <circle cx="64" cy="-4" r="8" fill="url(#dotg)"/>
+          <!-- Inner white -->
+          <circle cx="64" cy="-4" r="3.5" fill="white" opacity="0.9"/>
+          <!-- Stem -->
+          <line x1="64" y1="4" x2="64" y2="10" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round"/>
         </g>
-        <text x="280" y="158" class="brand-name">Sales<tspan class="brand-bold">Point</tspan></text>
-        <text x="281" y="186" class="brand-tag">BUSINESS SOFTWARE SOLUTIONS</text>
+
+        <!-- Wordmark -->
+        <text
+          x="108" y="72"
+          font-family="'DM Sans', Arial, sans-serif"
+          font-size="52"
+          font-weight="600"
+          letter-spacing="-1.5"
+          fill="#111827">Sales<tspan fill="#2563EB">Point</tspan></text>
+
+        <!-- Tagline -->
+        <text
+          x="109" y="90"
+          font-family="'DM Sans', Arial, sans-serif"
+          font-size="11"
+          font-weight="400"
+          letter-spacing="3"
+          fill="#9CA3AF">BUSINESS SOFTWARE SOLUTIONS</text>
+
       </svg>
     </div>
     <a href="https://t.me/Levi_swn" target="_blank" rel="noopener noreferrer" class="nav-contact">Contact Sales →</a>
@@ -680,7 +720,7 @@ footer {
     </div>
   </section>
 
-  <!-- CARDS -->
+  <!-- PRICING CARDS -->
   <section class="pricing-grid">
 
     <!-- NORMAL -->
@@ -922,27 +962,48 @@ footer {
     <!-- FOOTER -->
     <footer>
       <div class="footer-logo">
-        <svg viewBox="0 0 680 280" xmlns="http://www.w3.org/2000/svg">
-          <style>
-            .f-brand-name { font-family: Arial, sans-serif; font-size: 42px; font-weight: 500; fill: #111827; letter-spacing: -1px; }
-            .f-brand-tag  { font-family: Arial, sans-serif; font-size: 14px; font-weight: 400; fill: #6B7280; letter-spacing: 2px; }
-            .f-brand-bold { font-weight: 500; fill: #2563EB; }
-            .f-bar1 { fill: #BFDBFE; }
-            .f-bar2 { fill: #3B82F6; }
-            .f-bar3 { fill: #1D4ED8; }
-            .f-arc  { stroke: #2563EB; stroke-width: 2.5; fill: none; stroke-linecap: round; }
-          </style>
-          <g transform="translate(155, 80)">
-            <rect class="f-bar1" x="0" y="72" width="22" height="38" rx="4"/>
-            <rect class="f-bar2" x="30" y="44" width="22" height="66" rx="4"/>
-            <rect class="f-bar3" x="60" y="14" width="22" height="96" rx="4"/>
-            <path class="f-arc" d="M 11 68 Q 41 20 71 10"/>
-            <circle cx="71" cy="0" r="11" fill="#F59E0B"/>
-            <circle cx="71" cy="0" r="5" fill="white"/>
-            <line x1="71" y1="10" x2="71" y2="18" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/>
+        <!-- Footer logo (smaller version) -->
+        <svg class="footer-logo-svg" viewBox="0 0 560 110" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="fb1g" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#93C5FD"/>
+              <stop offset="100%" stop-color="#BFDBFE"/>
+            </linearGradient>
+            <linearGradient id="fb2g" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#3B82F6"/>
+              <stop offset="100%" stop-color="#60A5FA"/>
+            </linearGradient>
+            <linearGradient id="fb3g" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#1D4ED8"/>
+              <stop offset="100%" stop-color="#2563EB"/>
+            </linearGradient>
+            <radialGradient id="fdotg" cx="38%" cy="35%" r="65%">
+              <stop offset="0%" stop-color="#FDE68A"/>
+              <stop offset="55%" stop-color="#F59E0B"/>
+              <stop offset="100%" stop-color="#D97706"/>
+            </radialGradient>
+          </defs>
+          <g transform="translate(8, 8)">
+            <rect x="0" y="46" width="20" height="44" rx="5" fill="url(#fb1g)"/>
+            <rect x="27" y="28" width="20" height="62" rx="5" fill="url(#fb2g)"/>
+            <rect x="54" y="8" width="20" height="82" rx="5" fill="url(#fb3g)"/>
+            <path d="M 10 42 Q 37 14 64 4" fill="none" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round" opacity="0.65"/>
+            <circle cx="64" cy="-4" r="8" fill="url(#fdotg)"/>
+            <circle cx="64" cy="-4" r="3.5" fill="white" opacity="0.9"/>
+            <line x1="64" y1="4" x2="64" y2="10" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round"/>
           </g>
-          <text x="280" y="158" class="f-brand-name">Sales<tspan class="f-brand-bold">Point</tspan></text>
-          <text x="281" y="186" class="f-brand-tag">BUSINESS SOFTWARE SOLUTIONS</text>
+          <text x="108" y="72"
+            font-family="'DM Sans', Arial, sans-serif"
+            font-size="52"
+            font-weight="600"
+            letter-spacing="-1.5"
+            fill="#111827">Sales<tspan fill="#2563EB">Point</tspan></text>
+          <text x="109" y="90"
+            font-family="'DM Sans', Arial, sans-serif"
+            font-size="11"
+            font-weight="400"
+            letter-spacing="3"
+            fill="#9CA3AF">BUSINESS SOFTWARE SOLUTIONS</text>
         </svg>
       </div>
       <div class="footer-note">Cloud-based · Any device · Any time · © 2025 SalesPoint. All rights reserved.</div>
