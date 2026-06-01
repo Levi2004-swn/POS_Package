@@ -715,7 +715,7 @@ footer {
     <div class="billing-toggle">
       <button class="toggle-btn active" id="btn-monthly" onclick="setBilling('monthly')">Monthly</button>
       <button class="toggle-btn" id="btn-yearly" onclick="setBilling('yearly')">
-        Yearly <span class="toggle-badge">–20%</span>
+        Yearly
       </button>
     </div>
   </section>
@@ -729,7 +729,7 @@ footer {
       <div class="plan-name">Normal</div>
       <div class="price-block">
         <span class="price-currency">MMK</span>
-        <span class="price-amount" id="price-normal">50,000</span>
+        <span class="price-amount" id="price-normal">42000</span>
       </div>
       <div class="price-period" id="period-normal">per month</div>
       <a href="https://t.me/Levi_swn" class="cta-btn">Get Started</a>
@@ -786,7 +786,7 @@ footer {
       <div class="plan-name">Advanced</div>
       <div class="price-block">
         <span class="price-currency">MMK</span>
-        <span class="price-amount" id="price-advanced">120,000</span>
+        <span class="price-amount" id="price-advanced">70000</span>
       </div>
       <div class="price-period" id="period-advanced">per month</div>
       <a href="https://t.me/Levi_swn" class="cta-btn blue">Get Started</a>
@@ -842,7 +842,7 @@ footer {
       <div class="plan-name">Premium</div>
       <div class="price-block">
         <span class="price-currency">MMK</span>
-        <span class="price-amount" id="price-premium">250,000</span>
+        <span class="price-amount" id="price-premium">110000</span>
       </div>
       <div class="price-period" id="period-premium">per month</div>
       <a href="https://t.me/Levi_swn" class="cta-btn">Get Started</a>
@@ -1014,8 +1014,8 @@ footer {
 
 <script>
   const prices = {
-    monthly: { normal: '50,000',    advanced: '120,000',   premium: '250,000' },
-    yearly:  { normal: '480,000',   advanced: '1,152,000', premium: '2,400,000' }
+    monthly: { normal: '42,000',    advanced: '70,000',   premium: '110,000' },
+    yearly:  { normal: '500,000',   advanced: '800,000', premium: '1,300,000' }
   };
   let current = 'monthly';
 
@@ -1025,7 +1025,7 @@ footer {
     document.getElementById('btn-monthly').classList.toggle('active', mode === 'monthly');
     document.getElementById('btn-yearly').classList.toggle('active', mode === 'yearly');
     const p = prices[mode];
-    const period = mode === 'monthly' ? 'per month' : 'per year  (save 20%)';
+    const period = mode === 'monthly' ? 'per month' : 'per year';
     ['normal','advanced','premium'].forEach(plan => {
       const el = document.getElementById('price-' + plan);
       el.style.opacity = '0';
